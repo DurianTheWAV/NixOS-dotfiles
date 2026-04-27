@@ -3,13 +3,13 @@
 {
   imports = [
     # Include the results of the hardware scan.
-    ../hardware-configuration.nix
+    hardware-configuration.nix
     
     # Home Manager as a NixOS module (flake-based)
     #inputs.home-manager.nixosModules.home-manager
     ./modules/hyprland.nix
-    ../fonts.nix
-    ../gaming.nix
+    fonts.nix
+    gaming.nix
   ];
   ## -------------------------
   ## Bootloader

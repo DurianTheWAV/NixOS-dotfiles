@@ -39,7 +39,7 @@
         }
 
         # Base system (uses stable)
-        ./nixos/configuration.nix
+        ./configuration.nix
 
         # Home Manager as NixOS module (uses stable via follows)
         home-manager.nixosModules.home-manager
@@ -59,7 +59,7 @@
         }
 
         # My  custom modules
-        ./nixos/modules/hyprland.nix
+        ./modules/hyprland.nix
       ];
     };
   };

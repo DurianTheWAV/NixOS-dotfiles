@@ -41,12 +41,12 @@ in
 	snano = "sudo nano";
 
         # OS maintenance 
-        rebuild-config = "cd /etc && sudo nixos-rebuild switch --flake .#WAV && cd ~";
-        test-config = "cd /etc && sudo nixos-rebuild test --flake .#WAV && cd ~";
+        rebuild-config = "cd /etc/nixos && sudo nixos-rebuild switch --flake .#WAV && cd ~";
+        test-config = "cd /etc/nixos && sudo nixos-rebuild test --flake .#WAV && cd ~";
         clean = "sudo nix-collect-garbage -d";
         nix-list = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
         nix-config = "sudo nano /etc/nixos/configuration.nix";
-        upd = "cd /etc && sudo nix-channel --update && sudo nixos-rebuild switch --upgrade --flake .#WAV && cd ~";
+        upd = "cd /etc/nixos && sudo nix-channel --update && sudo nixos-rebuild switch --upgrade --flake .#WAV && cd ~";
         del-old-gen = "sudo nix-env --delete-generations old -p /nix/var/nix/profiles/system";
 	ipa = "ip -br -c -4 a";
 	clr = "cat /dev/null > ~/.zsh_history && history -c";

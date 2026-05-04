@@ -12,9 +12,17 @@
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";  # Follow stable for home-manager
     };
+    ambxst = {
+      url = "github:Axenide/Ambxst/dev";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";  # Use unstable for ambxst
+    };
+    zen-browser = {
+       url = "github:youwen5/zen-browser-flake";
+       inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, ambxst, zen-browser, ... }:
   let
     system = "x86_64-linux";
 
@@ -28,7 +36,7 @@
       inherit system;
 
       specialArgs = {
-        inherit inputs;
+        inherit inputs ambxst zen-browser;
         inherit unstable;  # Pass unstable package set to modules
       };
 
@@ -49,7 +57,9 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 
-
+          home-manager.extraSpecialArgs = {
+             inherit unstable;
+          };
 
           home-manager.users.durian = {
             imports = [
@@ -60,6 +70,8 @@
 
         # My  custom modules
         ./modules/hyprland.nix
+        ./modules/ambxst.nix
+        ./modules/zen.nix
       ];
     };
   };

@@ -1,5 +1,48 @@
 {
   "nodes": {
+    "ambxst": {
+      "inputs": {
+        "axctl": "axctl",
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775093757,
+        "narHash": "sha256-osK5dWf8wMnJs+OmBMo7ND5Q9MU5HaMKcq8SosBpzmQ=",
+        "owner": "Axenide",
+        "repo": "Ambxst",
+        "rev": "844cb9d3fc465ff13b504c99469fb6c4d695e399",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Axenide",
+        "ref": "dev",
+        "repo": "Ambxst",
+        "type": "github"
+      }
+    },
+    "axctl": {
+      "inputs": {
+        "nixpkgs": [
+          "ambxst",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775093664,
+        "narHash": "sha256-V+G+xjZndXWACpN3YLkH1T8XePmGXJby4VpIwePKXsY=",
+        "owner": "Axenide",
+        "repo": "axctl",
+        "rev": "bb47ec7e39ee81f64daa45de2eb99d9a726e49a8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Axenide",
+        "repo": "axctl",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -55,9 +98,31 @@
     },
     "root": {
       "inputs": {
+        "ambxst": "ambxst",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "zen-browser": "zen-browser"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1777612697,
+        "narHash": "sha256-h+tXBNMDrsKbD1UnYw0IeSIT4RalHtIJ1GLOviib7/8=",
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "rev": "f9f70d14f9a57c7962c5cfe589461c1391044448",
+        "type": "github"
+      },
+      "original": {
+        "owner": "youwen5",
+        "repo": "zen-browser-flake",
+        "type": "github"
       }
     }
   },

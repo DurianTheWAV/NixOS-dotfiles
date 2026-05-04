@@ -80,7 +80,11 @@ in
       jetbrains.idea
       jetbrains.jdk
       jetbrains.pycharm
-      kicad
+      kicad      
+    ])
+    ++
+    (with unstable; [
+      sbb-tui
     ]);
 
   xdg.configFile = {

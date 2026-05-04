@@ -6,8 +6,9 @@
     ./hardware-configuration.nix
     
     # Home Manager as a NixOS module (flake-based)
-    #inputs.home-manager.nixosModules.home-manager
+    inputs.home-manager.nixosModules.home-manager
     ./modules/hyprland.nix
+    ./modules/ambxst.nix
     ./fonts.nix
     ./gaming.nix
   ];
@@ -139,12 +140,36 @@
   ## ---------------------------------------
   ## Other Desktops
   ## ---------------------------------------
-  programs.hyprland.enable = false;
+  programs.hyprland.enable = true;
+
+  # create a Wayland session file for GDM
+  environment.etc."share/wayland-sessions/hyprland.desktop".text = ''
+  [Desktop Entry]
+  Name=Hyprland
+  Comment=Hyprland Wayland session
+  Exec=Hyprland
+  Type=Application
+  X-GNOME-Autostart-enabled=false
+  NoDisplay=false
+'';
+
+  # enable niri if available
+  programs.niri.enable = true;
+
+  environment.etc."share/wayland-sessions/niri.desktop".text = ''
+  [Desktop Entry]
+  Name=Niri
+  Comment=Niri Wayland session
+  Exec=niri
+  Type=Application
+  X-GNOME-Autostart-enabled=false
+  NoDisplay=false
+'';
+  services.xserver.windowManager.qtile.enable = true;
 
   ## -------------------------
   ## Audio
   ## -------------------------
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;

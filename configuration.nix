@@ -151,7 +151,7 @@
   Type=Application
   X-GNOME-Autostart-enabled=false
   NoDisplay=false
-'';
+  '';
 
   # enable niri if available
   programs.niri.enable = true;
@@ -164,7 +164,7 @@
   Type=Application
   X-GNOME-Autostart-enabled=false
   NoDisplay=false
-'';
+  '';
   services.xserver.windowManager.qtile.enable = true;
 
   ## -------------------------
@@ -247,7 +247,7 @@
   # Enable Ollama
   services.ollama = {
     enable = true;
-    loadModels = [ "llama3.2:3b" "gemma3:4b" ];
+    loadModels = [ "gemma3:4b" ];
   };
 
   ## -------------------------

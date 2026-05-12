@@ -1,0 +1,26 @@
+input {
+  keyboard {
+    layout = "ch"
+    variant = "fr"
+  }
+}
+
+cursor {
+  theme = "Bibata-Modern-Classic"
+  size = 16
+}
+
+layout {
+  gaps = 10
+}
+
+binds {
+  "Super+Return" = "spawn ghostty"
+  "Super+Q" = "close-window"
+  "Super+F" = "toggle-fullscreen"
+  "Super+Escape" = "exit"
+}
+
+spawn-at-startup = [
+  "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+]

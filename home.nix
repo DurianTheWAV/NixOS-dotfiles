@@ -80,16 +80,31 @@ in
       jetbrains.idea
       jetbrains.jdk
       jetbrains.pycharm
-      kicad      
+      kicad
+      freerdp
+      neo-cowsay
+      fortune-kind
     ])
     ++
     (with unstable; [
       sbb-tui
+      winboat
+      discordo
     ]);
 
   xdg.configFile = {
-    "fastfetch/nix.jsonc".source = mkLink "${dotfiles}/fastfetch/nix.jsonc";
+    "fastfetch/config.jsonc".source = mkLink "${dotfiles}/fastfetch/config.jsonc";
     "hypr/hyprland.conf".source = mkLink "${dotfiles}/hypr/hyprland.conf";
+    "Ambxst/wallpapers.json".source = mkLink "${dotfiles}/Ambxst/wallpapers.json";
+    "nvim/init.lua".source = mkLink "${dotfiles}/nvim/init.lua";
+    "nvim/lua/plugins/lualine.lua".source = mkLink "${dotfiles}/nvim/lua/plugins/lualine.lua";
+    "nvim/lua/plugins/nvim-tree.lua".source = mkLink "${dotfiles}/nvim/lua/plugins/nvim-tree.lua";
+    "nvim/lua/plugins/telescope.lua".source = mkLink "${dotfiles}/nvim/lua/plugins/telescope.lua";
+    "nvim/lua/plugins/alpha.lua".source = mkLink "${dotfiles}/nvim/lua/plugins/alpha.lua";
+    "nvim/lua/plugins/lsp_and_cmp.lua".source = mkLink "${dotfiles}/nvim/lua/plugins/lsp_and_cmp.lua";
+    "qtile/config.py".source = mkLink "${dotfiles}/qtile/config.py";
+    "niri/config.toml".source = mkLink "${dotfiles}/niri/config.toml";
+    "spicetify/config.ini".source = mkLink "${dotfiles}/spicetify/config.ini";
   };
 
   # Install firefox.

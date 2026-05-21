@@ -165,11 +165,11 @@ in
 
   programs.git = {
     enable = true;
-    settings.user = {
-      name = "Durian";
-      email = "dorian@luyet.ch";
-    };
     settings = {
+      user = {
+        name = "Durian";
+        email = "dorian@luyet.ch";
+      };
       init.defaultBranch = "main";
       safe.directory = "/etc/nixos";
     };
@@ -177,7 +177,7 @@ in
 
   home.file.".config/fastfetch/image/cirno.png".source = mkLink "${dotfiles}/fastfetch/image/cirno.png";
   home.file.".local/share/wallpapers/cyrene.jpg".source = mkLink "${dotfiles}/wallpapers/cyrene.jpg";
-  home.file.".local/share/wallpapers/evernight.jpg".source = mkLink "${dotfiles}/wallpapers/evernight,jpg";
+  home.file.".local/share/wallpapers/evernight.jpg".source = mkLink "${dotfiles}/wallpapers/evernight.jpg";
   home.file.".local/share/wallpapers/miku-samurai.jpg".source = mkLink "${dotfiles}/wallpapers/miku-samurai.jpg";
   home.file.".config/fastfetch/image/cirno2.png".source = mkLink "${dotfiles}/fastfetch/image/cirno2.png";
   home.file.".local/share/fastfetch/presets/nix.jsonc".source = mkLink "${dotfiles}/fastfetch/nix.jsonc";

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }:
+{ config, pkgs, lib, inputs, unstable, ... }:
 
 {
   imports = [
@@ -15,9 +15,19 @@
   ## -------------------------
   ## Bootloader
   ## -------------------------
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
+  boot.loader = {
+    systemd-boot.enable = false;
+    grub = {
+      enable = true;
+      efiSupport = true;
+      device = "nodev";
+      useOSProber = true;
+    };
+    efi = {
+      canTouchEfiVariables = true;
+      # efiSysMountPoint = "/boot/efi";
+    };
+  };
 
   ## ------------------------
   ## Kernel

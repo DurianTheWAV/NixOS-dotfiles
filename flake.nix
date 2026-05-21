@@ -27,8 +27,13 @@
     system = "x86_64-linux";
 
     # Import package sets
-    pkgs = import nixpkgs { inherit system; };
-    unstable = import nixpkgs-unstable { inherit system; };
+    pkgs = import nixpkgs { 
+      inherit system;
+    };
+    unstable = import nixpkgs-unstable { 
+      inherit system;
+      config.allowUnfree = true;
+     };
     
   in
   {

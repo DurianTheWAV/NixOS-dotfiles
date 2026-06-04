@@ -67,7 +67,6 @@ in
       cider-2
       steam
       localsend
-      vscodium
       obsidian
       yubioath-flutter
       nixfmt-rfc-style
@@ -83,15 +82,17 @@ in
       freerdp
       neo-cowsay
       fortune-kind
+      speedtest-cli
     ])
     ++
     (with unstable; [
       sbb-tui
       winboat
+      vscode
       (discord.override {
          withVencord = true;
       })
-  ]);
+    ]);
 
   xdg.configFile = {
     "fastfetch/config.jsonc".source = mkLink "${dotfiles}/fastfetch/config.jsonc";

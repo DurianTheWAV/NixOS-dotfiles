@@ -9,6 +9,7 @@
     inputs.home-manager.nixosModules.home-manager
     ./modules/hyprland.nix
     ./modules/ambxst.nix
+    ./modules/zed.nix
     ./fonts.nix
     ./gaming.nix
   ];
@@ -41,6 +42,7 @@
     settings = {
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "@wheel" ];
+      download-buffer-size = 134217728;
     };
 
     gc = {

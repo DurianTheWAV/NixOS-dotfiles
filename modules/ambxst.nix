@@ -1,4 +1,4 @@
-{ config, pkgs, ambxst,unstable, ... }:
+{ config, pkgs, ambxst, unstable, ... }:
 
 let
  system = pkgs.stdenv.hostPlatform.system;

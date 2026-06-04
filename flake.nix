@@ -7,7 +7,10 @@
 
     # Unstable for specific packages
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-
+    
+    # Zed editor flake
+    zed.url = "github:zed-industries/zed";
+    
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
       inputs.nixpkgs.follows = "nixpkgs";  # Follow stable for home-manager
@@ -22,7 +25,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, ambxst, zen-browser, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, ambxst, zen-browser, zed,  ... }:
   let
     system = "x86_64-linux";
 
@@ -41,7 +44,7 @@
       inherit system;
 
       specialArgs = {
-        inherit inputs ambxst zen-browser;
+        inherit inputs ambxst zen-browser zed;
         inherit unstable;  # Pass unstable package set to modules
       };
 
@@ -73,10 +76,11 @@
           };
         }
 
-        # My  custom modules
+        # My custom modules
         ./modules/hyprland.nix
         ./modules/ambxst.nix
         ./modules/zen.nix
+        ./modules/zed.nix
       ];
     };
   };

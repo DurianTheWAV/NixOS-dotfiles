@@ -242,7 +242,7 @@
     zsh-history-substring-search
     fastfetch
     python314
-    nodejs_24
+    nodejs_latest
     vlc
     fzf
   ];

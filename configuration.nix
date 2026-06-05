@@ -64,7 +64,7 @@
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
-      studenv.cc.cc
+      stdenv.cc.cc
       zlib
       openssl
       glib

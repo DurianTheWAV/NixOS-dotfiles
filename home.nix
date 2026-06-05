@@ -7,7 +7,7 @@ in
 {
   home.username = "durian";
   home.homeDirectory = "/home/durian";
-  home.stateVersion = "25.11";
+  home.stateVersion = "26.05";
 
   programs.home-manager.enable = true;
   
@@ -63,13 +63,13 @@ in
       btop
       ani-cli
       manga-tui
-      protonvpn-gui
+      proton-vpn
       cider-2
       steam
       localsend
       obsidian
       yubioath-flutter
-      nixfmt-rfc-style
+      nixfmt
       remmina
       blender
       cava

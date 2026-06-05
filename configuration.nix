@@ -60,6 +60,16 @@
     allowReboot = false;
   };
   nixpkgs.config.allowUnfree = true;
+  
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      studenv.cc.cc
+      zlib
+      openssl
+      glib
+    ];
+  };
 
   # systemd services for automatic updates with flakes enabled
   systemd.services.nixos-flake-update = {

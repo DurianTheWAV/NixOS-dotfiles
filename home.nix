@@ -83,11 +83,14 @@ in
       neo-cowsay
       fortune-kind
       speedtest-cli
+      ntfs3g
+      smartmontools
     ])
     ++
     (with unstable; [
       sbb-tui
       winboat
+      claude-code
       vscode
       (discord.override {
          withVencord = true;

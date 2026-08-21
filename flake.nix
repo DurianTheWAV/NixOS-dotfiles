@@ -36,6 +36,9 @@
     unstable = import nixpkgs-unstable { 
       inherit system;
       config.allowUnfree = true;
+      config.permittedInsecurePackages = [
+        "electron-40.10.5"
+      ];
      };
     
   in
@@ -44,7 +47,7 @@
       inherit system;
 
       specialArgs = {
-        inherit inputs ambxst zen-browser zed;
+        inherit inputs ambxst zen-browser ;
         inherit unstable;  # Pass unstable package set to modules
       };
 

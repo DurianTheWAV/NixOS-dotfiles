@@ -161,7 +161,7 @@
   ## ---------------------------------------
   ## Other Desktops
   ## ---------------------------------------
-  programs.hyprland.enable = true;
+  programs.hyprland.enable = false;
 
   # create a Wayland session file for GDM
   environment.etc."share/wayland-sessions/hyprland.desktop".text = ''
@@ -175,7 +175,7 @@
   '';
 
   # enable niri if available
-  programs.niri.enable = true;
+  programs.niri.enable = false;
 
   environment.etc."share/wayland-sessions/niri.desktop".text = ''
   [Desktop Entry]
@@ -186,7 +186,7 @@
   X-GNOME-Autostart-enabled=false
   NoDisplay=false
   '';
-  services.xserver.windowManager.qtile.enable = true;
+  services.xserver.windowManager.qtile.enable = false;
 
   ## -------------------------
   ## Audio
@@ -247,6 +247,10 @@
     fzf
   ];
 
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-40.10.5"
+  ];
+
   # Allow Appimages
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
@@ -266,10 +270,10 @@
   virtualisation.docker.enable = true;
 
   # Enable Ollama
-  services.ollama = {
+  /*services.ollama = {
     enable = true;
     loadModels = [ "gemma3:4b" ];
-  };
+  };*/
 
   ## -------------------------
   ## Performance

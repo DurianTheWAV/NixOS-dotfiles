@@ -9,7 +9,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     
     # Zed editor flake
-    zed.url = "github:zed-industries/zed";
+    # zed.url = "github:zed-industries/zed";
     
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -25,7 +25,7 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, zen-browser, zed,  ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, zen-browser, ... }:
   let
     system = "x86_64-linux";
 
@@ -83,7 +83,7 @@
         # ./modules/hyprland.nix
         # ./modules/ambxst.nix
         ./modules/zen.nix
-        ./modules/zed.nix
+        # ./modules/zed.nix
       ];
     };
   };

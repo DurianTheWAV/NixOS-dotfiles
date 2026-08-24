@@ -7,7 +7,7 @@
     
     # Home Manager as a NixOS module (flake-based)
     inputs.home-manager.nixosModules.home-manager
-    ./modules/zed.nix
+    # ./modules/zed.nix
     ./fonts.nix
     ./gaming.nix
   ];

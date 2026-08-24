@@ -7,8 +7,6 @@
     
     # Home Manager as a NixOS module (flake-based)
     inputs.home-manager.nixosModules.home-manager
-    ./modules/hyprland.nix
-    ./modules/ambxst.nix
     ./modules/zed.nix
     ./fonts.nix
     ./gaming.nix

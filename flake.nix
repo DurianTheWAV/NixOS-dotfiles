@@ -15,17 +15,17 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";  # Follow stable for home-manager
     };
-    ambxst = {
+    /*ambxst = {
       url = "github:Axenide/Ambxst/dev";
       inputs.nixpkgs.follows = "nixpkgs-unstable";  # Use unstable for ambxst
-    };
+    };*/
     zen-browser = {
        url = "github:youwen5/zen-browser-flake";
        inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, ambxst, zen-browser, zed,  ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, zen-browser, zed,  ... }:
   let
     system = "x86_64-linux";
 
@@ -47,7 +47,7 @@
       inherit system;
 
       specialArgs = {
-        inherit inputs ambxst zen-browser ;
+        inherit inputs zen-browser;
         inherit unstable;  # Pass unstable package set to modules
       };
 
@@ -80,8 +80,8 @@
         }
 
         # My custom modules
-        ./modules/hyprland.nix
-        ./modules/ambxst.nix
+        # ./modules/hyprland.nix
+        # ./modules/ambxst.nix
         ./modules/zen.nix
         ./modules/zed.nix
       ];

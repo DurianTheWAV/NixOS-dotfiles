@@ -73,7 +73,7 @@ in
       remmina
       blender
       cava
-      hyprland
+      # hyprland
       oh-my-zsh
       jetbrains.idea
       jetbrains.jdk
@@ -83,8 +83,6 @@ in
       neo-cowsay
       fortune-kind
       speedtest-cli
-      ntfs3g
-      smartmontools
     ])
     ++
     (with unstable; [
@@ -99,10 +97,10 @@ in
 
   xdg.configFile = {
     "fastfetch/config.jsonc".source = mkLink "${dotfiles}/fastfetch/config.jsonc";
-    "hypr/hyprland.conf".source = mkLink "${dotfiles}/hypr/hyprland.conf";
-    "Ambxst/wallpapers.json".source = mkLink "${dotfiles}/Ambxst/wallpapers.json";
-    "qtile/config.py".source = mkLink "${dotfiles}/qtile/config.py";
-    "niri/config.toml".source = mkLink "${dotfiles}/niri/config.toml";
+    # "hypr/hyprland.conf".source = mkLink "${dotfiles}/hypr/hyprland.conf";
+    # "Ambxst/wallpapers.json".source = mkLink "${dotfiles}/Ambxst/wallpapers.json";
+    # "qtile/config.py".source = mkLink "${dotfiles}/qtile/config.py";
+    # "niri/config.toml".source = mkLink "${dotfiles}/niri/config.toml";
   };
 
   # Install firefox.

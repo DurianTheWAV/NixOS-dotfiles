@@ -245,10 +245,6 @@
     fzf
   ];
 
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-40.10.5"
-  ];
-
   # Allow Appimages
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;

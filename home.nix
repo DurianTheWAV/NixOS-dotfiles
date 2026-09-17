@@ -107,8 +107,8 @@ in
   programs.firefox.enable = true;
 
   # Enable KDE Connect
-  services.kdeconnect.enable = true;
-  services.kdeconnect.indicator = true;
+  services.kdeconnect.enable = false;
+  services.kdeconnect.indicator = false;
 
   programs.kitty = {
     enable = true;

@@ -19,13 +19,13 @@
       url = "github:Axenide/Ambxst/dev";
       inputs.nixpkgs.follows = "nixpkgs-unstable";  # Use unstable for ambxst
     };*/
-    zen-browser = {
+    /*zen-browser = {
        url = "github:youwen5/zen-browser-flake";
        inputs.nixpkgs.follows = "nixpkgs";
-    };
+    };*/
   };
 
-  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, zen-browser, ... }:
+  outputs = inputs@{ self, nixpkgs, nixpkgs-unstable, home-manager, ... }:
   let
     system = "x86_64-linux";
 
@@ -47,7 +47,7 @@
       inherit system;
 
       specialArgs = {
-        inherit inputs zen-browser;
+        inherit inputs;
         inherit unstable;  # Pass unstable package set to modules
       };
 
@@ -82,7 +82,7 @@
         # My custom modules
         # ./modules/hyprland.nix
         # ./modules/ambxst.nix
-        ./modules/zen.nix
+        # ./modules/zen.nix
         # ./modules/zed.nix
       ];
     };

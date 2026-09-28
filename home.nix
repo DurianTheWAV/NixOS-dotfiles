@@ -83,6 +83,9 @@ in
       neo-cowsay
       fortune-kind
       speedtest-cli
+      chromium
+      zerotierone
+      tailscale
     ])
     ++
     (with unstable; [
